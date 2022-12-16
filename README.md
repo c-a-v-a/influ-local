@@ -1,38 +1,26 @@
-# create-svelte
+# Rozwoj
+1. Zgloszenia na abonament, kiedy bedziemy miec wieksza baze influencerow
+2. Mozliwosc szybkiego przedluzenia kontraktu, z influ, z ktorymi wczesniej pracowalismy
+3. Ocena wspolpracy z influ
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+# Co innego
+1. skupiamy sie na malych, lokalnych przedsiebiorstwach i mikro oraz nano influencerach, ktorzy nie maja za soba managerow i agencji
 
-## Creating a project
+# Co mamy
+1. firmy wystawiaja posty
+2. influencerzy wyrazaja chec na sponsora
+3. firmy wybieraja influencerow wedlug potrzeb
 
-If you're seeing this, you've probably already done this step. Congrats!
+# Biznes
+1. Za kontrakt na pieniadze aplikacja pobierze prowizje 10%
+2. Za barter aplikacja bedzie wymagac platnosci 20pln od zakontraktowanego influencera
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+# Dlaczego male biznesy?
+globalne firmy chca wiekszych wspolprac, a mniejsze biznesy nie maja duzo pieniedzy
+zeby dac je agencja reklamowym, wiec szukja tanszych opcji - mniejszych influencerow
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+# Dlaczego mali influencerzy?
+Jest to duzy rynek osob, ktorzy chcieliby zaczac zarabiac robiac to co kochaja,
+a nie sa rozpoznawali na tyle, aby byc czescia wiekszej agencji, ktora zalatwialaby
+wieksze wspolprace z globalnymi markami. Dodatkowo mneijsi infuencerzy moga miec lepsze
+relacje ze swoimi obserwatorami (mniej osob wiec latwiej jest miec lepszy kontakt).
