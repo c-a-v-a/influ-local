@@ -4,6 +4,7 @@
 	const vector = '/Vector.svg';
 	export let post: any;
 	export let company: any;
+	export let influMode: any;
 </script>
 
 <div
@@ -37,14 +38,16 @@
 			<h1 class="text-base mr-1 text-justify ">{post.creationDate}</h1>
 		</div>
 	</div>
-	<div class="w-full flex justify-end items-center">
-		<div class="flex justify-center items-center font-extralight">
-			<Button>
-				<div class="flex flex-row">
-					<img src={vector} class="w-5 h-5 mr-1" alt="xd" />
-					Aplikuj do kampanii
-				</div>
-			</Button>
+	{#if influMode}
+		<div class="w-full flex justify-end items-center">
+			<div class="flex justify-center items-center font-extralight">
+				<Button>
+					<div class="flex flex-row">
+						<img src={vector} class="w-5 h-5 mr-1" alt="xd" />
+						Aplikuj do kampanii
+					</div>
+				</Button>
+			</div>
 		</div>
-	</div>
+	{/if}
 </div>
