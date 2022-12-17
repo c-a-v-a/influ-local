@@ -18,20 +18,26 @@
 	<div
 		class="my-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
 	>
-		<img class="w-5 h-5" src={Mail} alt="mail" />
-		<span class="text-l ml-1 text-gray-200 font-bold">Wiadomości</span>
+		<a href="#" class="flex flex-row">
+			<img class="w-5 h-5 mt-0.5" src={Mail} alt="mail" />
+			<span class="text-l ml-1 text-gray-200 font-bold">Wiadomości</span>
+		</a>
 	</div>
 	<div
 		class="my-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
 	>
-		<img class="w-5 h-5" src={done} alt="Billboard" />
-		<span class="text-l ml-1 text-gray-200 font-bold">Moje kontrakty</span>
+		<a href="#" class="flex flex-row">
+			<img class="w-5 h-5 mt-0.5" src={done} alt="Billboard" />
+			<span class="text-l ml-1 text-gray-200 font-bold">Moje kontrakty</span>
+		</a>
 	</div>
 	<div
 		class="my-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
 	>
-		<img class="w-5 h-5" src={Monitor} alt="Billboard" />
-		<span class="text-l ml-1 text-gray-200 font-bold">Wszystkie posty</span>
+		<a href="/influ/posts" class="flex flex-row">
+			<img class="w-5 h-5 mt-0.5" src={Monitor} alt="Billboard" />
+			<span class="text-l ml-1 text-gray-200 font-bold">Wszystkie posty</span>
+		</a>
 	</div>
 	<div class="my-4 bg-gray-600 h-[1px]" />
 	<div
