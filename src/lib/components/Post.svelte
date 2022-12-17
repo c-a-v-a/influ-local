@@ -4,11 +4,18 @@
 	const vector = '/Vector.svg';
 	export let post: any;
 	export let company: any;
-	export let influMode: any;
+	export let influMode: boolean;
 </script>
 
-<div
-	class="w-4/6  rounded-lg  border-2 shadow-md m-4 flex flex-col justify-center items-center text-black p-6"
+<button
+	on:click={() => {
+		if (!influMode) {
+			console.log('dd');
+		}
+	}}
+	class="w-4/6  rounded-lg  border-2 shadow-md m-4 flex flex-col justify-center items-center text-black p-6 {influMode
+		? 'cursor-auto'
+		: 'cursor-pointer'}"
 >
 	<div class="w-full  flex justify-end items-center">
 		<div class="flex justify-center items-center font-light">
@@ -50,4 +57,4 @@
 			</div>
 		</div>
 	{/if}
-</div>
+</button>

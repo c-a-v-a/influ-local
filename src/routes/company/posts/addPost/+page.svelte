@@ -36,7 +36,6 @@
 			name: campaignName,
 			description: text,
 			influencers: [],
-			selected: [],
 			price: sallary,
 			creationDate: new Date().toLocaleDateString('en-US'),
 			category: selectedCategory
