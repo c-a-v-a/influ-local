@@ -1,5 +1,9 @@
-<script>
-	import Post from '../lib/components/Post.svelte';
-</script>
+<div class="h-[100vh] w-full aaa flex justify-center items-center">
+	<div class="h-200 w-200" />
+</div>
 
-<h1 class="text-blue-700 ml-16">Welcome to SvelteKit</h1>
+<style>
+	.aaa {
+		background-image: linear-gradient(to right bottom, #002055, #004f84, #0081a8, #26b4c2, #7ce6d7);
+	}
+</style>
