@@ -1,9 +1,9 @@
 <script>
-	const logoSrc = './src/static/logo.svg';
-	const imageSocial = './src/static/imageSocial.svg';
-	const Mail = './src/static/Mail.svg';
-	const Billboard = './src/static/Billboard.svg';
-	const Monitor = './src/static/Monitor.svg';
+	const logoSrc = '/logo.svg';
+	const imageSocial = '/imageSocial.svg';
+	const Mail = '/Mail.svg';
+	const Billboard = '/Billboard.svg';
+	const Monitor = '/Monitor.svg';
 </script>
 
 <span class="absolute text-white text-4xl top-5 left-4 cursor-pointer">

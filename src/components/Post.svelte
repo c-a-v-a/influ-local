@@ -1,6 +1,6 @@
 <script>
 	export let company = {
-		logosrc: './src/static/starBucksLogo.png',
+		logosrc: '/starBucksLogo.png',
 		city: 'Kraków',
 		companyName: 'Starbucks',
 		postName: 'Reklamowanie kawiarni “StarBucks”',
@@ -17,7 +17,7 @@
 	<div class="w-full  flex justify-end items-center">
 		<div class="flex justify-center items-center font-light">
 			<h1 class="text-lg mr-1">{company.city}</h1>
-			<img src="./src/static/cityIcon.svg" class=" w-12 h-12" />
+			<img src="/cityIcon.svg" class=" w-12 h-12" />
 		</div>
 	</div>
 	<div class="w-full  flex justify-start items-center">
