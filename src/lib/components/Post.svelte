@@ -1,14 +1,23 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 	import Button from '$lib/components/Button.svelte';
 	const companyLogo = '/company.svg';
 	const vector = '/Vector.svg';
 	export let post: any;
 	export let company: any;
 	export let influMode: any;
+	export let id: string;
 </script>
 
 <div
-	class="w-4/6 border-2 shadow-md m-4 rounded-md flex flex-col justify-center items-center text-black "
+	on:click={() => {
+		if (influMode) return;
+		goto($page.url.pathname + '/' + id);
+	}}
+	class="w-4/6 border-1 shadow-md m-4 rounded-md flex flex-col justify-center items-center text-black {influMode
+		? 'cursor-auto'
+		: 'cursor-pointer'}"
 >
 	<div
 		class="flex justify-center items-center flex-col w-full p-6 headerPost rounded-md text-white"

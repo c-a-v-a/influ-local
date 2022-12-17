@@ -5,6 +5,7 @@
 	const Billboard = '/Billboard.svg';
 	const Monitor = '/Monitor.svg';
 	const done = '/Done.svg';
+	const accountIcon = '/account.svg';
 </script>
 
 <div
@@ -42,7 +43,9 @@
 	</div>
 	<img class="absolute inset-x-0 bottom-0" src={imageSocial} alt="aaa" />
 </div>
-
+<div class="absolute right-0 top-0">
+	<img src={accountIcon} class="h-16 w-16" alt="aaa" />
+</div>
 <slot />
 
 <style>

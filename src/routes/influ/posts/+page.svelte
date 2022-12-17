@@ -16,6 +16,3 @@
 		{/each}
 	{/each}
 </div>
-<div class="flex items-start mr-5 mt-5">
-	<img src={accountIcon} class="h-16 w-16" />
-</div>
