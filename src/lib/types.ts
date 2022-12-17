@@ -23,8 +23,7 @@ export interface Influencer {
 export interface CompanyPost {
     name: string;
     description: string;
-    influencers: [string];
-    selected: [string];
+    influencers: Array<string>;
     price: string;
     creationDate: string;
 }
@@ -32,7 +31,8 @@ export interface CompanyPost {
 export interface Contract {
     company: string;
     influencer: string;
-    description: string;
+    title: string;
+    price: string;
 }
 
 export interface FirebaseResponse<T> {

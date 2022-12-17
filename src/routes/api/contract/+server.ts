@@ -1,6 +1,6 @@
 import type { CompanyPost, Contract, FirebaseResponse } from '$lib/types';
 import database from '$lib/firebase';
-import { ref, child, get, set } from 'firebase/database';
+import { remove, ref, child, get, set } from 'firebase/database';
 import { json } from '@sveltejs/kit';
 import { generateUUID } from '$lib/utils';
 import type { RequestEvent } from './$types';
@@ -24,11 +24,39 @@ export async function GET(event: RequestEvent) {
 }
 
 export async function POST(event: RequestEvent) {
-    const post = await event.request.json() as CompanyPost;
+    const body = await event.request.json();
+    const contract = body.contract;
+    const postId = body.post;
     const uuid = generateUUID();
     const r = ref(database, `contracts/${uuid}`);
 
-    await set(r, post);
+    await set(r, contract);
+
+    const postR = ref(database, `companies/${contract.company}/posts/${postId}/influencers`);
+
+    const snapshot = await get(postR);
+
+    if (snapshot.exists()) {
+        let arr = snapshot.val();
+        arr.splice(arr.indexOf(contract.influencer), 1);
+
+        set(postR, arr);
+    }
 
     return json({});
+}
+
+export async function DELETE(event: RequestEvent) {
+    const body = await event.request.json();
+    const contractId = body.contract;
+
+    if (!contractId) {
+        return json({error: true})
+    }
+
+    const r = ref(database, `contracts/${contractId}`);
+
+    remove(r);
+
+    return json({error: false});
 }
