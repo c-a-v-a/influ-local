@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
+	const addPostIcon = '/addPostIcon.svg';
 	import Post from '$lib/components/Post.svelte';
 	const accountIcon = '/account.svg';
 
@@ -20,3 +23,12 @@
 		{/each}
 	{/each}
 </div>
+
+<button
+	on:click={() => {
+		goto($page.url.pathname + '/' + 'addPost');
+	}}
+	class="absolute right-0 bottom-0 m-5"
+>
+	<img src={addPostIcon} class="h-28 w-28" alt="addPost" />
+</button>

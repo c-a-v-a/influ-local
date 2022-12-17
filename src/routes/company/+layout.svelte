@@ -1,10 +1,13 @@
 <script>
+	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 	const logoSrc = '/logo.svg';
 	const imageSocial = '/imageSocial.svg';
 	const Mail = '/Mail.svg';
 	const Billboard = '/Billboard.svg';
 	const Monitor = '/Monitor.svg';
 	const accountIcon = '/account.svg';
+	const addPostIcon = '/addPostIcon.svg';
 </script>
 
 <div
@@ -52,6 +55,14 @@
 <div class="absolute right-0 top-0">
 	<img src={accountIcon} class="h-16 w-16" alt="aaa" />
 </div>
+<!-- <button
+	on:click={() => {
+		goto($page.url.pathname + '/' + 'addPost');
+	}}
+	class="absolute right-0 bottom-0 m-5"
+>
+	<img src={addPostIcon} class="h-28 w-28" alt="addPost" />
+</button> -->
 
 <slot />
 

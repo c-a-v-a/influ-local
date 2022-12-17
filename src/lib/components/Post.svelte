@@ -4,7 +4,7 @@
 	import Button from '$lib/components/Button.svelte';
 	import type { CompanyPost } from '$lib/types';
 
-	const companyLogo = '/company.svg';
+	const companyLogo = '/tea-cup.png';
 	const vector = '/Vector.svg';
 	const user = '0';
 	export let post: CompanyPost;
@@ -31,10 +31,7 @@
 
 	$: checkHide = () => {
 		if (!post.influencers) return false;
-		else
-			return (
-				Object.values(post.influencers).includes('0') || Object.values(post.selected).includes('0')
-			);
+		else return Object.values(post.influencers).includes('0');
 	};
 </script>
 
@@ -45,7 +42,7 @@
 	}}
 	class="{influMode && (checkHide() || hide)
 		? 'hidden'
-		: ''}w-4/6 border-1 shadow-md m-4 rounded-md flex flex-col justify-center items-center text-black {influMode
+		: ''} w-4/6 border-1 shadow-md m-4 rounded-md flex flex-col justify-center items-center text-black {influMode
 		? 'cursor-auto'
 		: 'cursor-pointer'}"
 >
@@ -69,7 +66,7 @@
 			</div>
 			<div class="flex flex-col">
 				<h1 class="text-4xl -mt-4">{post.name}</h1>
-				<h4 style="color: #ffd24c;">≈ {post.price} zł</h4>
+				<h4 style="color: white;">≈ {post.price} zł</h4>
 			</div>
 		</div>
 	</div>
