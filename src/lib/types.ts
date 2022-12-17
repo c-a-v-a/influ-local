@@ -1,5 +1,7 @@
 type SocialName = 'Instagram'|'Facebook'|'TikTok';
 
+type Category = 'Odzież' | 'Restauracje' | 'Rozrywka' | 'Artykuły sportowe' | 'Turystyka';
+
 export interface Social {
     name: SocialName;
     link: string;
@@ -26,6 +28,7 @@ export interface CompanyPost {
     influencers: Array<string>;
     price: string;
     creationDate: string;
+    category: Category;
 }
 
 export interface Contract {
