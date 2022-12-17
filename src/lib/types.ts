@@ -9,12 +9,15 @@ export interface Company {
     name: string;
     mail: string;
     localization: string;
+    icon: string;
+    posts: Array<CompanyPost>;
 };
 
 export interface Influencer {
     name: string;
     mail: string;
     socialMedia: [Social];
+    icon: string;
 };
 
 export interface CompanyPost {
@@ -27,8 +30,12 @@ export interface CompanyPost {
     category: string
 }
 
-export interface Brief {
+export interface Contract {
     company: string;
     influencer: string;
     description: string;
+}
+
+export interface FirebaseResponse<T> {
+    [key: string]: T
 }
