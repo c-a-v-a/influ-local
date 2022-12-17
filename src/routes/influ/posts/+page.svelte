@@ -4,7 +4,7 @@
 	const accountIcon = '/account.svg';
 
 	export let data: any;
-	$:item = data.item as FirebaseResponse<Company>
+	$: item = data.item as FirebaseResponse<Company>;
 
 	let influMode = true;
 	let searchBooks = '';
@@ -45,13 +45,10 @@
 		{#each Object.entries(company.posts) as [postId, post]}
 			{#if company.localization.includes(searchTerm) || searchTerm == ''}
 				<div class="flex flex-row justify-center">
-					<Post {post} {company} {influMode} postId={postId} companyId={companyId}/>
+					<Post {post} {company} {influMode} {postId} {companyId} id={postId} />
 				</div>
 			{/if}
 		{/each}
 	{/each}
 	<!-- {/if} -->
-</div>
-<div class="flex items-start mr-5 mt-5">
-	<img src={accountIcon} class="h-16 w-16 cursor-pointer filter hover:contrast-50" />
 </div>

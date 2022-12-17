@@ -1,13 +1,17 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 	import Button from '$lib/components/Button.svelte';
 	import type { CompanyPost } from '$lib/types';
 
 	const companyLogo = '/company.svg';
 	const vector = '/Vector.svg';
-	const user = '0'
+	const user = '0';
 	export let post: CompanyPost;
 	export let company: any;
 	export let influMode: any;
+	export let id: string;
+
 	export let postId: any;
 	export let companyId: any;
 
@@ -16,24 +20,34 @@
 	function applyForPost() {
 		hide = true;
 
-		fetch ('/api/post', {
+		fetch('/api/post', {
 			method: 'PUT',
 			headers: {
 				'content-type': 'application/json'
 			},
-			body: JSON.stringify({ company: companyId, post: postId, user: '0'})
-		})		
+			body: JSON.stringify({ company: companyId, post: postId, user: '0' })
+		});
 	}
 
 	$: checkHide = () => {
 		if (!post.influencers) return false;
-		else return (Object.values(post.influencers).includes('0') ||
-			Object.values(post.selected).includes('0'))
-	}
+		else
+			return (
+				Object.values(post.influencers).includes('0') || Object.values(post.selected).includes('0')
+			);
+	};
 </script>
 
 <div
-	class="{influMode && (checkHide() || hide) ? 'hidden' : ''} w-4/6 border-2 shadow-md m-4 rounded-md flex flex-col justify-center items-center text-black "
+	on:click={() => {
+		if (influMode) return;
+		goto($page.url.pathname + '/' + id);
+	}}
+	class="{influMode && (checkHide() || hide)
+		? 'hidden'
+		: ''}w-4/6 border-1 shadow-md m-4 rounded-md flex flex-col justify-center items-center text-black {influMode
+		? 'cursor-auto'
+		: 'cursor-pointer'}"
 >
 	<div
 		class="flex justify-center items-center flex-col w-full p-6 headerPost rounded-md text-white"
