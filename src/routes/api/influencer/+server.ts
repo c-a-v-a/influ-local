@@ -24,7 +24,7 @@ export async function GET(event: RequestEvent) {
 }
 
 export async function POST(event: RequestEvent) {
-    const post = await event.request.json() as CompanyPost;
+    const post = await event.request.json() as Influencer;
     const uuid = generateUUID();
     const r = ref(database, `influencers/${uuid}`);
 

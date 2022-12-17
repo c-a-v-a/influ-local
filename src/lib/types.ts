@@ -1,4 +1,4 @@
-type SocialName = 'Instagram'|'Facebook'|'TikTok';
+type SocialName = 'Instagram' | 'Facebook' | 'TikTok';
 
 export interface Social {
     name: SocialName;
@@ -23,16 +23,17 @@ export interface Influencer {
 export interface CompanyPost {
     name: string;
     description: string;
-    influencers: [string];
-    selected: [string];
+    influencers: Array<string>;
     price: string;
     creationDate: string;
+    category: string
 }
 
 export interface Contract {
     company: string;
     influencer: string;
-    description: string;
+    title: string;
+    price: string;
 }
 
 export interface FirebaseResponse<T> {
