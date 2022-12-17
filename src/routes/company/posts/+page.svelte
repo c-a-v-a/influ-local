@@ -5,6 +5,7 @@
 	export let data: any;
 	console.log(data);
 	let influMode = false;
+	$: console.log(data);
 </script>
 
 <div class="flex w-3/4 md:w-4/5 sm:w-3/4 flex-col">
