@@ -197,7 +197,7 @@
 			<div class="flex justify-end">
 				<Button on:click={() => addPost()}>
 					<div class="flex justify-center items-center">
-						<img src="/Plus.svg" alt="Kiwi standing on oval" class="w-5 h-5 mr-1" />
+						<img src="/Plus.svg" alt="plus" class="w-5 h-5 mr-1" />
 						Dodaj post
 					</div>
 				</Button>
