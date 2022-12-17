@@ -1,6 +1,13 @@
 <script lang="ts">
 	import type { CompanyPost } from '../../../../lib/types';
 	import Button from '$lib/components/Button.svelte';
+	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
+
+	const goBack = () => {
+		goto($page.url.pathname.substring(0, $page.url.pathname.lastIndexOf('/')));
+	}
+
 	let hideCategoriesSelect = true;
 	let categories: any = [
 		{
@@ -25,7 +32,7 @@
 	let city = '';
 	let campaignName = '';
 
-	const addPost = () => {
+	const addPost = async () => {
 		if (text == '') return;
 		if (selectedCategory == undefined) return;
 		if (sallary == '') return;
@@ -36,12 +43,20 @@
 			name: campaignName,
 			description: text,
 			influencers: [],
-			selected: [],
 			price: sallary,
 			creationDate: new Date().toLocaleDateString('en-US'),
 			category: selectedCategory
 		};
-		console.log(obj);
+
+		await fetch('/api/post', {
+			method: 'POST',
+			body: JSON.stringify({ post: obj, company: '0' }),
+			headers: {
+				'content-type': 'application/json'
+			}
+		})
+
+		goBack();
 	};
 </script>
 
@@ -195,7 +210,7 @@
 
 		<div class="pt-5">
 			<div class="flex justify-end">
-				<Button on:click={() => addPost()}>
+				<Button on:clicked={() => addPost()}>
 					<div class="flex justify-center items-center">
 						<img src="/Plus.svg" alt="plus" class="w-5 h-5 mr-1" />
 						Dodaj post
