@@ -25,7 +25,7 @@
 		class="my-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
 	>
 		<img class="w-5 h-5" src={done} alt="Billboard" />
-		<span class="text-l ml-1 text-gray-200 font-bold">Moje kampanie</span>
+		<span class="text-l ml-1 text-gray-200 font-bold">Moje kontrakty</span>
 	</div>
 	<div
 		class="my-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
