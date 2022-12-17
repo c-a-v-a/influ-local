@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { CompanyPost } from '../../../../lib/types';
+	import Button from '$lib/components/Button.svelte';
 	let hideCategoriesSelect = true;
 	let categories: any = [
 		{
@@ -194,11 +195,12 @@
 
 		<div class="pt-5">
 			<div class="flex justify-end">
-				<button
-					on:click={() => addPost()}
-					class="ml-3 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-					>Dodaj post</button
-				>
+				<Button on:click={() => addPost()}>
+					<div class="flex justify-center items-center">
+						<img src="/Plus.svg" alt="Kiwi standing on oval" class="w-5 h-5 mr-1" />
+						Dodaj post
+					</div>
+				</Button>
 			</div>
 		</div>
 	</div>
