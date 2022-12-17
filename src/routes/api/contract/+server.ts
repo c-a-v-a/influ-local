@@ -25,7 +25,7 @@ export async function GET(event: RequestEvent) {
 
 export async function POST(event: RequestEvent) {
     const body = await event.request.json();
-    const contract = body.contract;
+    const contract = body.contract as Contract;
     const postId = body.post;
     const uuid = generateUUID();
     const r = ref(database, `contracts/${uuid}`);
@@ -33,14 +33,24 @@ export async function POST(event: RequestEvent) {
     await set(r, contract);
 
     const postR = ref(database, `companies/${contract.company}/posts/${postId}/influencers`);
+    const selectedR = ref(database, `companies/${contract.company}/posts/${postId}/selected`)
 
     const snapshot = await get(postR);
-
     if (snapshot.exists()) {
         let arr = snapshot.val();
         arr.splice(arr.indexOf(contract.influencer), 1);
 
         set(postR, arr);
+    }
+
+    const selected = await get(selectedR);
+    if (selected.exists()) {
+        let arr = snapshot.val();
+        arr.push(contract.influencer)
+
+        set(postR, arr);
+    } else {
+        set(postR, [contract.influencer])
     }
 
     return json({});

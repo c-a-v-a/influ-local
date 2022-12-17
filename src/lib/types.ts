@@ -18,6 +18,7 @@ export interface Company {
 export interface Influencer {
     name: string;
     mail: string;
+    localization: string;
     socialMedia: [Social];
     icon: string;
 };
@@ -26,6 +27,7 @@ export interface CompanyPost {
     name: string;
     description: string;
     influencers: Array<string>;
+    selected: Array<string>;
     price: string;
     creationDate: string;
     category: Category;

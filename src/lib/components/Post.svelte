@@ -1,14 +1,39 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
+	import type { CompanyPost } from '$lib/types';
+
 	const companyLogo = '/company.svg';
 	const vector = '/Vector.svg';
-	export let post: any;
+	const user = '0'
+	export let post: CompanyPost;
 	export let company: any;
 	export let influMode: any;
+	export let postId: any;
+	export let companyId: any;
+
+	let hide = false;
+
+	function applyForPost() {
+		hide = true;
+
+		fetch ('/api/post', {
+			method: 'PUT',
+			headers: {
+				'content-type': 'application/json'
+			},
+			body: JSON.stringify({ company: companyId, post: postId, user: '0'})
+		})		
+	}
+
+	$: checkHide = () => {
+		if (!post.influencers) return false;
+		else return (Object.values(post.influencers).includes('0') ||
+			Object.values(post.selected).includes('0'))
+	}
 </script>
 
 <div
-	class="w-4/6 border-2 shadow-md m-4 rounded-md flex flex-col justify-center items-center text-black "
+	class="{influMode && (checkHide() || hide) ? 'hidden' : ''} w-4/6 border-2 shadow-md m-4 rounded-md flex flex-col justify-center items-center text-black "
 >
 	<div
 		class="flex justify-center items-center flex-col w-full p-6 headerPost rounded-md text-white"
@@ -46,7 +71,7 @@
 		{#if influMode}
 			<div class="w-full flex justify-end items-center bg-white">
 				<div class="flex justify-center items-center font-extralight">
-					<Button>
+					<Button on:clicked={applyForPost}>
 						<div class="flex flex-row">
 							<img src={vector} class="w-5 h-5 mr-1" alt="xd" />
 							Aplikuj do kampanii
