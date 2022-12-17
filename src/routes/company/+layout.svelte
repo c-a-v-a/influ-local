@@ -6,11 +6,9 @@
 	const Monitor = '/Monitor.svg';
 </script>
 
-<span class="absolute text-white text-4xl top-5 left-4 cursor-pointer">
-	<i class="bi bi-filter-left px-2 bg-gray-900 rounded-md" />
-</span>
 <div
-	class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 md:w-1/5 sm:w-1/4 w-1/4 min-w-[150px] overflow-y-auto text-center sideBarContainer"
+	style="height: 100vh;"
+	class=" flex flex-col p-2 md:w-1/5 sm:w-1/4 w-1/4 min-w-[150px] overflow-y-auto text-center  sideBarContainer  sticky top-0 "
 >
 	<div class="flex items-center justify-center">
 		<img src={logoSrc} alt="logo" />
