@@ -1,4 +1,4 @@
-type SocialName = 'Instagram'|'Facebook'|'TikTok';
+type SocialName = 'Instagram' | 'Facebook' | 'TikTok';
 
 export interface Social {
     name: SocialName;
@@ -20,10 +20,11 @@ export interface Influencer {
 export interface CompanyPost {
     name: string;
     description: string;
-    influencers: [string];
-    selected: [string];
+    influencers: [string] | [];
+    selected: [string] | [];
     price: string;
     creationDate: string;
+    category: string
 }
 
 export interface Brief {
